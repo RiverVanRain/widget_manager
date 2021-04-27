@@ -59,13 +59,11 @@ class Bootstrap extends DefaultPluginBootstrap {
 	protected function registerIndexRoute() {
 		// @todo check -> need later priority to win over walledgarden
 		$setting = elgg_get_plugin_setting('custom_index', 'widget_manager');
-		if (empty($setting)) {
+		if (empty($setting) || $setting == '0|0') {
 			return;
 		}
 		
-		list($non_loggedin, $loggedin) = explode('|', $setting);
-		
-		if ((!elgg_is_logged_in() && !empty($non_loggedin)) || (elgg_is_logged_in() && !empty($loggedin)) || elgg_is_admin_logged_in()) {
+		if ((!elgg_is_logged_in() && $setting == '1|0') || (elgg_is_logged_in() && $setting == '0|1') || ($setting == '1|1') || elgg_is_admin_logged_in()) {
 			elgg_register_route('index', [
 				'path' => '/',
 				'resource' => 'widget_manager/custom_index',
