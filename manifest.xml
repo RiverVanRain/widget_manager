@@ -31,6 +31,12 @@
 		<priority>after</priority>
 	</requires>
 	
+	<requires>
+		<type>priority</type>
+		<plugin>theme</plugin>
+		<priority>before</priority>
+	</requires>
+	
 	<suggests>
 		<type>plugin</type>
 		<name>groups</name>
@@ -40,4 +46,6 @@
 		<type>plugin</type>
 		<name>dashboard</name>
 	</suggests>
+	
+	<activate_on_install>true</activate_on_install>
 </plugin_manifest>
