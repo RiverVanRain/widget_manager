@@ -4,6 +4,11 @@ define('ACCESS_LOGGED_OUT', -5);
 
 require_once(dirname(__FILE__) . '/lib/functions.php');
 
+$composer_path = '';
+if (is_dir(__DIR__ . '/vendor')) {
+	$composer_path = __DIR__ . '/';
+}
+
 return [
 	'bootstrap' => \ColdTrick\WidgetManager\Bootstrap::class,
 	'settings' => [
@@ -46,6 +51,12 @@ return [
 		],
 		'widget_manager/cleanup' => [
 			'access' => 'admin',
+		],
+		'widget_manager/fluid_order' => [],
+	],
+	'views' => [
+		'default' => [
+			'muuri.js' => $composer_path . 'vendor/npm-asset/muuri/dist/muuri.js',
 		],
 	],
 ];

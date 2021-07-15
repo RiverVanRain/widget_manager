@@ -35,6 +35,37 @@
 	flex-wrap: wrap;
 }
 
+.widgets-fluid-columns {
+	.elgg-widgets-grid {
+		display: block;
+		visibility: hidden;
+	}
+
+	.elgg-widgets {
+		padding: 0;
+		position: relative;
+	}
+	
+	.elgg-module-widget {
+		position: absolute;
+		margin: 14px;
+		
+		&.muuri-item-dragging {
+			z-index: 3;
+		}
+		&.muuri-item-releasing {
+			z-index: 2;
+		}
+		&.muuri-item-hidden {
+			z-index: 0;
+		}
+	}
+	
+	.fluid-placeholder {
+		border: 3px dashed $(border-color-mild);
+	}
+}
+
 @media $(media-desktop-up) {
 	.elgg-widgets {
 		flex-basis: 0;
