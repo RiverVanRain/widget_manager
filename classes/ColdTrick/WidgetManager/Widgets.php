@@ -77,6 +77,7 @@ class Widgets {
 	 *
 	 * @return void
 	 */
+/*	
 	public static function applyWidgetsConfig(\Elgg\Hook $hook) {
 		$return_value = $hook->getValue();
 		foreach ($return_value as $id => $widget_definition) {
@@ -127,7 +128,8 @@ class Widgets {
 		
 		return $return_value;
 	}
-			
+*/
+
 	/**
 	 * Adds manage_widgets context so the widgets always show up in admin/manage/widgets
 	 *
